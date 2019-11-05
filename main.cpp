@@ -10,15 +10,21 @@ struct Colunas
 class Tabela
 {
 private:
-    int chavePrimaria, chaveEstrangeira;
+    int chavePrimaria, chaveEstrangeira, n;
     Colunas v[];
 public:
-    Tabela(/* args */);
+    Tabela();
+    Tabela(int, int, int);
     ~Tabela();
 };
+Tabela::Tabela(){};
 
-Tabela::Tabela(/* args */)
+Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int n)
 {
+    this->chavePrimaria = chavePrimaria;
+    this->chaveEstrangeira = chaveEstrangeira;
+    this->n = n;
+    cout << "done" << endl;
 }
 
 Tabela::~Tabela()
@@ -26,8 +32,10 @@ Tabela::~Tabela()
 }
 
 
-int main()
+int main(int argc, const char * argv[])
 {
-
+    Tabela T;
+    int cP = 1, cE = 2, n = 3;
+    Tabela f(cP, cE, n);
     return 0;
 }
