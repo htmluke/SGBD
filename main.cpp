@@ -24,7 +24,6 @@ Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int n)
     this->chavePrimaria = chavePrimaria;
     this->chaveEstrangeira = chaveEstrangeira;
     this->n = n;
-    cout << "done" << endl;
 }
 
 Tabela::~Tabela()
