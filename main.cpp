@@ -1,48 +1,11 @@
 #include <iostream>
+#include <string>
+#include "classes.hpp"
+#include "funcoes.hpp"
+
 using namespace std;
 
-struct Colunas
-{
-    string nome;
-    int tipo;
-} typedef Colunas;
-
-class Tabela
-{
-private:
-    int chavePrimaria, chaveEstrangeira, n;
-    Colunas v[];
-public:
-    Tabela();
-    Tabela(int, int, int);
-    ~Tabela();
-};
-Tabela::Tabela(){};
-
-Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int n)
-{
-    this->chavePrimaria = chavePrimaria;
-    this->chaveEstrangeira = chaveEstrangeira;
-    this->n = n;
-}
-
-Tabela::~Tabela()
-{
-}
-void menu()
-{
-    cout << "Escolha uma opção: " << endl;
-    cout << "1 - Criar Tabela " << endl;
-    cout << "2 - Listar Tabelas Existentes" << endl;
-    cout << "3 - Adicionar Nova Linha na Tabela" << endl;
-    cout << "4 - Listar Todos os Dados da Tabela" << endl;
-    cout << "5 - Pesquisar Valor na Tabela" << endl;
-    cout << "6 - Apagar Valor na Tabela" << endl;
-    cout << "7 - Excluir Tabela" << endl;
-}
-
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]){
     Tabela T;
     int cP = 1, cE = 2, n = 3;
     Tabela f(cP, cE, n);
