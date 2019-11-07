@@ -5,6 +5,8 @@
 #include <string>
 using namespace std;
 
+//Referente às funções que não tem ação direta às classes usadas no programa
 void menu();
+void opcaoMenu()
 
 #endif
