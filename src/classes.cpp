@@ -31,68 +31,70 @@ bool verficar_numString(string a){
 
 Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam){
 	cout <<"Qual será o nome da tabela ?\n";
+	cout << "\t";
 	string nome;
 	cin >> nome;
 
 	ofstream tab;
     /*Abre um arquivo externo que será a tabela criada*/ 
-    tab.open(nome+".csv", std::ofstream::out);
+    tab.open("tabelas/"+nome+".csv", std::ofstream::out );
 
     this->chavePrimaria = chavePrimaria;
     this->chaveEstrangeira = chaveEstrangeira;
     this->tam = tam;
     this->v = new Colunas[tam];
-
-    this->v[0].tipo = 10/5;
-    cout << this->v[0].tipo << endl;
-    this->v[0].nome = "asd";
-    cout << this->v[0].nome << endl;
+  
     for(int i = 0; i < tam; i++){
     	if(i == 0){
+
     		cout << "Qual será o nome da coluna da chave primária ?\n";
+    		cout << "\t";
     		cin >> this->v[0].nome;
     		this->v[0].tipo = 1;
-    		cout <<"chega aqui 1\n";
     		tab << this->v[0].nome+",";
     	}
     	else {
     		cout <<"Qual será o nome da coluna de número " << i+1 << " ?\n";
+    		cout << "\t";
 	    	cin >> this->v[i].nome;
 	    	tab << this->v[i].nome+",";
 	    	int t;    	
 	    	cout <<"Diga qual será o tipo de valor que coluna vai armazenar.\n";
-	    	cout <<"1_____ int\n";
-	    	cout <<"2_____ float\n";
-	    	cout <<"3_____ double\n";
-	    	cout <<"4_____ char\n";
-	    	cout <<"5_____ string\n";
+	    	cout <<"\t1_____ int\n";
+	    	cout <<"\t2_____ float\n";
+	    	cout <<"\t3_____ double\n";
+	    	cout <<"\t4_____ char\n";
+	    	cout <<"\t5_____ string\n";
+	    	
 	    	cin >> t;
 	    	while(t > 5 || t < 1){
 	    		cout <<"Nenhuma opção válida selecionada.\n";
-	    		cout <<"Diga qual será o tipo de valor que coluna vai armazenar.\n";
-	    		cout <<"1_____ int\n";
-	    		cout <<"2_____ float\n";
-	    		cout <<"3_____ double\n";
-	    		cout <<"4_____ char\n";
-	    		cout <<"5_____ string\n";
+	    		cout <<"\nDiga qual será o tipo de valor que coluna vai armazenar.\n";
+	    		cout <<"\t1_____ int\n";
+	    		cout <<"\t2_____ float\n";
+	    		cout <<"\t3_____ double\n";
+	    		cout <<"\t4_____ char\n";
+	    		cout <<"\t5_____ string\n";
+	    	
 	    		cin >> t;
 	    	}
 	    	this->v[i].tipo = t;
 	    }	    
     }
     tab << endl;
-	string bla;
+	string pKey;
 	bool control = false;
 	    
 	while(!control){
 	  	control = true;
 	  	cout << "Qual será o valor da chave primária ?\n";
-	  	cin >> bla;
+	  	cout << "\t";
+	  	cin >> pKey;
 	   	try{
-	   		if(!verficar_numString(bla)){
+	   		if(!verficar_numString(pKey)){
 	   			throw (1);
 	   		}
-	   		tab << bla+",";
+	   		tab << pKey+",";
 	   		control = true;	   		
 	   	} catch(int erro){
 	   		if(erro == 1){

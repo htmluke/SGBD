@@ -14,4 +14,5 @@ void menu(){
     cout << "5 - Pesquisar Valor na Tabela" << endl;
     cout << "6 - Apagar Valor na Tabela" << endl;
     cout << "7 - Excluir Tabela" << endl;
+    cout << "8 - Sair" << endl;
 }
