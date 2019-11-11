@@ -5,7 +5,6 @@
 
 using namespace std;
 
-//função que imprime o menu para o usuário ver as alternativas do programa
 void menu(){
     cout << "Escolha uma opção: " << endl;
     cout << "1 - Criar Tabela " << endl;
@@ -15,57 +14,4 @@ void menu(){
     cout << "5 - Pesquisar Valor na Tabela" << endl;
     cout << "6 - Apagar Valor na Tabela" << endl;
     cout << "7 - Excluir Tabela" << endl;
-    cout << "0 - Sair" << endl;
-}
-
-//enum para enumerar as opções e poder atrelá-las ao switch na próxima função
-typedef enum Opcoes{
-	SAIR,
-	CRIARTABELA,
-	LISTARTABELA,
-	ADICIONARLINHA,
-	LISTARDADOS,
-	PESQUISARVALOR,
-	APAGARVALOR,
-	EXCLUIRTABELA
-} Opcoes;
-
-//função na qual o usuário, após escolher a alternativa, poderá realizar a ação desejada, podendo repetir e sair quando quiser
-void opcaoMenu()
-{
-    int aux = 1, opcao;
-    Opcoes op;
-    cin >> opcao;
-
-    switch (op){
-        case SAIR:
-            aux = 0;
-            cout << "Saindo..." << endl;
-            break;
-        case CRIARTABELA:
-
-            break;
-        case LISTARTABELA:
-
-            break;
-        case ADICIONARLINHA:
-
-            break;
-        case LISTARDADOS:
-
-            break;
-        case PESQUISARVALOR:
-
-            break;
-        case APAGARVALOR:
-
-            break;
-        case EXCLUIRTABELA:
-
-            break;
-        default:
-            cout << "Opção inválida, digite novamente :)" << endl;
-            break;
-    }
-    if(aux == 1) opcaoMenu();
 }

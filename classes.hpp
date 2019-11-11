@@ -12,8 +12,9 @@ struct Colunas{
 
 class Tabela{
 private:
-    int chavePrimaria, chaveEstrangeira, n;
-    Colunas v[];
+    int chavePrimaria, chaveEstrangeira;
+    unsigned int tam;
+    Colunas* v;
 public:
     Tabela();
     Tabela(int, int, int);
