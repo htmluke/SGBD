@@ -17,7 +17,7 @@ private:
     Colunas* v;
 public:
     Tabela();
-    Tabela(int, int, int);
+    Tabela(int, int, int, list<string>);
     ~Tabela();
 };
 
