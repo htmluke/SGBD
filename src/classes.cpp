@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <list>
 #include "classes.hpp"
+#include "funcoes.hpp"
 using namespace std;
 
 Tabela::Tabela(){}
@@ -29,11 +31,14 @@ bool verficar_numString(string a){
 	return true;
 }
 
-Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam){
+Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam, list<string> lista){
 	cout <<"Qual será o nome da tabela ?\n";
 	cout << "\t";
 	string nome;
 	cin >> nome;
+
+	//Acessa a função da lista que armazena o nome da tabela
+	inserirLista(nome, lista);
 
 	ofstream tab;
     /*Abre um arquivo externo que será a tabela criada*/ 
