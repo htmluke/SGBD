@@ -38,7 +38,7 @@ Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam, list<string> li
 	cin >> nome;
 
 	//Acessa a função da lista que armazena o nome da tabela
-	inserirLista(nome, lista);
+	//inserirLista(nome, lista);
 
 	ofstream tab;
     /*Abre um arquivo externo que será a tabela criada*/ 
