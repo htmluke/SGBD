@@ -7,6 +7,7 @@
 using namespace std;
 
 typedef enum Opcoes{
+
 	SAIR,
 	CRIARTABELA,
 	LISTARTABELA,
@@ -15,6 +16,7 @@ typedef enum Opcoes{
 	PESQUISARVALOR,
 	APAGARVALOR,
 	EXCLUIRTABELA
+	
 } Opcoes;
 
 int main(int argc, const char * argv[]){
@@ -27,44 +29,52 @@ int main(int argc, const char * argv[]){
         //Imprime o menu toda vez que o usuário for realizar uma nova atividade
         menu();
         cin >> opcao;
-        switch (op){
+        switch (opcao){
 
-            case SAIR:
+            case SAIR:{
                 aux = 0;
                 cout << "Saindo..." << endl;
-                break;
+            }
+        		break;
 
-            case CRIARTABELA:
+            case CRIARTABELA:{
                 Tabela T(cP, cE, n, lista);
+            }
                 break;
 
-            case LISTARTABELA:
+           case LISTARTABELA:{
+           	
+           	}
+         		break;
 
+            case ADICIONARLINHA:{
+
+            }
                 break;
 
-            case ADICIONARLINHA:
+            case LISTARDADOS:{
 
+            }
                 break;
 
-            case LISTARDADOS:
+            case PESQUISARVALOR:{
 
+            }
                 break;
 
-            case PESQUISARVALOR:
+            case APAGARVALOR:{
 
+            }
                 break;
 
-            case APAGARVALOR:
-
-                break;
-
-            case EXCLUIRTABELA:
-
+            case EXCLUIRTABELA:{
+            	
+            }
                 break;
 
             default:
                 cout << "Opção inválida, digite novamente :)" << endl;
-                break;
+
         }
     }
     
