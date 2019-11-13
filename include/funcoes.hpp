@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include <string>
+#include <dirent.h>
+#include <cstdlib>
 using namespace std;
 
 void menu();
 void opcaoMenu();
-void inserirLista(string, list<string>);
-void listarTabela(list<string>);
-void excluirNomeTabela(list<string>);
+//void inserirLista(string, list<string>);
+void listarTabela(string);
+//void excluirNomeTabela(list<string>);
 
 #endif
