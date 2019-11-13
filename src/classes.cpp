@@ -80,7 +80,8 @@ Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam, list<string> li
 	    		cout <<"\t3_____ double\n";
 	    		cout <<"\t4_____ char\n";
 	    		cout <<"\t5_____ string\n";
-	    	
+	    		cin.clear();
+	    		cin.ignore();
 	    		cin >> t;
 	    	}
 	    	this->v[i].tipo = t;
