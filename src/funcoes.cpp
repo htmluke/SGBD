@@ -9,15 +9,15 @@
 using namespace std;
 
 void menu(){
-    cout << "Escolha uma opção: " << endl;
-    cout << "0 - Sair" << endl;
-    cout << "1 - Criar Tabela " << endl;
-    cout << "2 - Listar Tabelas Existentes" << endl;
-    cout << "3 - Adicionar Nova Linha na Tabela" << endl;
-    cout << "4 - Listar Todos os Dados da Tabela" << endl;
-    cout << "5 - Pesquisar Valor na Tabela" << endl;
-    cout << "6 - Apagar Valor na Tabela" << endl;
-    cout << "7 - Excluir Tabela" << endl;
+    cout << "\tEscolha uma opção: " << endl;
+    cout << "\t0 - Sair" << endl;
+    cout << "\t1 - Criar Tabela " << endl;
+    cout << "\t2 - Listar Tabelas Existentes" << endl;
+    cout << "\t3 - Adicionar Nova Linha na Tabela" << endl;
+    cout << "\t4 - Listar Todos os Dados da Tabela" << endl;
+    cout << "\t5 - Pesquisar Valor na Tabela" << endl;
+    cout << "\t6 - Apagar Valor na Tabela" << endl;
+    cout << "\t7 - Excluir Tabela" << endl;
    
 }
 
@@ -42,6 +42,30 @@ void listarTabela(string nomeDir){
     closedir (dir);
 }
 
+ void excluirTabela(){
+
+     string tabelaRm, auxiliar;
+     bool aux = false;
+
+     do{
+     cout<<"Insira o nome da tabela a ser excluída:\t";
+     
+     cin >> tabelaRm;
+
+     auxiliar = "tabelas/"+tabelaRm+".csv";
+     
+     if (remove(auxiliar.c_str( )) != 0){
+        cout << "Não foi possível excluir a tabela. Verifique se o nome está correto.\n" << endl;
+     }
+     else{
+        cout << "\nA tabela " << tabelaRm <<" foi excluída com sucesso!\n" << endl;
+        aux = true;
+     }
+ }while(aux == false);
+
+
+     
+ }
 /*void inserirLista(string nome, list<string> lista){
     if(lista.empty() == true){
         lista.push_front(nome);
