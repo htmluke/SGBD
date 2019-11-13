@@ -8,6 +8,7 @@ using namespace std;
 
 void menu(){
     cout << "Escolha uma opção: " << endl;
+    cout << "0 - Sair" << endl;
     cout << "1 - Criar Tabela " << endl;
     cout << "2 - Listar Tabelas Existentes" << endl;
     cout << "3 - Adicionar Nova Linha na Tabela" << endl;
@@ -15,7 +16,7 @@ void menu(){
     cout << "5 - Pesquisar Valor na Tabela" << endl;
     cout << "6 - Apagar Valor na Tabela" << endl;
     cout << "7 - Excluir Tabela" << endl;
-    cout << "8 - Sair" << endl;
+   
 }
 
 void inserirLista(string nome, list<string> lista){
