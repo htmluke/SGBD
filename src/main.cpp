@@ -3,6 +3,8 @@
 #include <list>
 #include "classes.hpp"
 #include "funcoes.hpp"
+#include <dirent.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -43,7 +45,7 @@ int main(int argc, const char * argv[]){
                 break;
 
            case LISTARTABELA:{
-           	
+                listarTabela("tabelas");           	
            	}
          		break;
 
