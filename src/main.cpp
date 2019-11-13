@@ -5,6 +5,8 @@
 #include "funcoes.hpp"
 #include <dirent.h>
 #include <cstdlib>
+#include<stdio.h>     //for remove( ) and rename( )
+
 
 using namespace std;
 
@@ -70,7 +72,7 @@ int main(int argc, const char * argv[]){
                 break;
 
             case EXCLUIRTABELA:{
-            	
+            	excluirTabela();
             }
                 break;
 
@@ -79,6 +81,7 @@ int main(int argc, const char * argv[]){
 
         }
     }
+
     
     return 0;
 }
