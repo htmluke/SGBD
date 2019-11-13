@@ -11,6 +11,8 @@ void menu();
 void opcaoMenu();
 //void inserirLista(string, list<string>);
 void listarTabela(string);
+void excluirTabela();
+
 //void excluirNomeTabela(list<string>);
 
 #endif
