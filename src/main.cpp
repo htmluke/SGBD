@@ -5,6 +5,7 @@
 #include "funcoes.hpp"
 #include <dirent.h>
 #include <cstdlib>
+#include <fstream>
 #include<stdio.h>     //for remove( ) and rename( )
 
 
@@ -27,8 +28,9 @@ int main(int argc, const char * argv[]){
     list<string> lista;
     Tabela T;
     Opcoes op;
-    int cP = 1, cE = 2, n = 3;
-    int aux = 1, opcao;
+    unsigned int n = 3;
+    int aux = 1; 
+    int opcao;
     while(aux == 1){
         //Imprime o menu toda vez que o usuário for realizar uma nova atividade
         menu();
@@ -39,20 +41,20 @@ int main(int argc, const char * argv[]){
                 aux = 0;
                 cout << "Saindo..." << endl;
             }
-        		break;
+                break;
 
             case CRIARTABELA:{
-                Tabela T(cP, cE, n, lista);
+                Tabela Tab(n);
             }
                 break;
 
            case LISTARTABELA:{
-                listarTabela("tabelas");           	
-           	}
-         		break;
+                listarTabela("tabelas");            
+            }
+                break;
 
             case ADICIONARLINHA:{
-
+                inserirLinha();
             }
                 break;
 
@@ -72,7 +74,7 @@ int main(int argc, const char * argv[]){
                 break;
 
             case EXCLUIRTABELA:{
-            	excluirTabela();
+                
             }
                 break;
 

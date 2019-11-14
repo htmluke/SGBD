@@ -1,37 +1,46 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <list>
 #include "classes.hpp"
 #include "funcoes.hpp"
+#include <ctype.h>
 using namespace std;
+
+template <typename T>
+T inserir_campo(int tipo, T pKey){
+	bool control = true;
+    while(control){
+        try{
+            cin >> pKey;
+            if(cin.fail()){
+                throw 1;
+            } 
+            else {
+            	cout << "Valor aceito.\n";
+                return pKey;
+            }
+        }catch(int n){
+            cout << "Digite um valor válido para o tipo esperando.\n";
+            cout << "Tipo esperado é " << tipo << endl;
+            cout <<"\t1_____ int\n";
+            cout <<"\t2_____ float\n";
+            cout <<"\t3_____ double\n";
+            cout <<"\t4_____ char\n";
+            cout <<"\t5_____ string\n";
+            cin.clear();
+            string badToken;
+        	cin >> badToken;
+                        	
+            
+            cout <<"\tDigite um valor: \n";            
+        }
+    }
+    return pKey;
+}
 
 Tabela::Tabela(){}
 
-bool compareString_Number(char a){
-
-	if((a =='0') || (a =='1') || (a =='2') || (a =='3') || (a =='4') || (a =='5') || (a =='6') || (a =='7') || (a =='8') || (a =='9')){
-		return true;
-	}
-	else{
-		return false;
-	}
-}
-
-bool verficar_numString(string a){
-	for(int i = 0; i < a.size(); i++){
-		if(a[0] == '-'){
-		}
-		else if((a[i] =='0') || (a[i] =='1') || (a[i] =='2') || (a[i] =='3') || (a[i] =='4') || (a[i] =='5') || (a[i] =='6') || (a[i] =='7') || (a[i] =='8') || (a[i] =='9')){		
-		}
-		else{
-			return false;
-		}
-	}
-	return true;
-}
-
-Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam, list<string> lista){
+Tabela::Tabela(int tam){
 	cout <<"Qual será o nome da tabela ?\n";
 	cout << "\t";
 	string nome;
@@ -48,21 +57,35 @@ Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam, list<string> li
     this->chaveEstrangeira = chaveEstrangeira;
     this->tam = tam;
     this->v = new Colunas[tam];
+
+    string nColuna;
   
     for(int i = 0; i < tam; i++){
     	if(i == 0){
 
     		cout << "Qual será o nome da coluna da chave primária ?\n";
     		cout << "\t";
-    		cin >> this->v[0].nome;
+    		cin >> nColuna;
+    		nColuna = verifica_Coluna(nColuna);
+    		this->v[0].nome = nColuna;
     		this->v[0].tipo = 1;
-    		tab << this->v[0].nome+",";
+    		if(i+1 == tam){
+    			tab << this->v[0].nome;
+    			tab << this->v[0].tipo;
+    		}
+    		else {
+    			tab << this->v[0].nome;
+    			tab << this->v[0].tipo;
+    			tab << ",";
+    		}
     	}
     	else {
     		cout <<"Qual será o nome da coluna de número " << i+1 << " ?\n";
     		cout << "\t";
-	    	cin >> this->v[i].nome;
-	    	tab << this->v[i].nome+",";
+	    	cin >> nColuna;
+	    	nColuna = verifica_Coluna(nColuna);
+    		this->v[i].nome = nColuna;
+	    	
 	    	int t;    	
 	    	cout <<"Diga qual será o tipo de valor que coluna vai armazenar.\n";
 	    	cout <<"\t1_____ int\n";
@@ -85,34 +108,64 @@ Tabela::Tabela(int chavePrimaria, int chaveEstrangeira, int tam, list<string> li
 	    		cin >> t;
 	    	}
 	    	this->v[i].tipo = t;
+	    	if(i+1 == tam){	    		
+	    		tab << this->v[i].nome;
+	    		tab << this->v[i].tipo;
+	    	}
+	    	else {
+	    		tab << this->v[i].nome;
+	    		tab << this->v[i].tipo;
+    			tab << ",";
+	    	}
 	    }	    
     }
     tab << endl;
-	string pKey;
-	bool control = false;
-	    
-	while(!control){
-	  	control = true;
-	  	cout << "Qual será o valor da chave primária ?\n";
-	  	cout << "\t";
-	  	cin >> pKey;
-	   	try{
-	   		if(!verficar_numString(pKey)){
-	   			throw (1);
-	   		}
-	   		tab << pKey+",";
-	   		control = true;	   		
-	   	} catch(int erro){
-	   		if(erro == 1){
-	   			cout << "Valor digitado invalido! Digite um valor válido.\n";
-	   		}	   		
-	   		cin.clear();
-	   		cin.ignore();
-	   		control = false;
-	   	}
-	   	
-	   	
+    //
+    
+	int cont = 1;
+	int s = -1;
+	cout << "Qual será o valor da chave primária ?\n";
+	cout << "\t";
+	tab <<  inserir_campo(1, -1);
+	tab << ",";
+	cout << "Deseja preencher os demais campos da linha ? Digite 1 para sim e qualquer coisa para não\n";
+	cin >> s;
+	while(cont < tam){		
+		if(s != 1){
+			cin.clear();
+            string badToken;
+        	cin >> badToken;
+			break;
+		}
+		else {
+			cout << "Digite o conteudo da coluna " << cont+1 <<": \n";
+			switch(this->v[cont].tipo){
+				case 1:
+					tab << inserir_campo(1, -1);
+					tab << ",";
+					break;
+				case 2:
+					tab << inserir_campo<float>(2, -1.0);
+					tab << ",";
+					break;
+				case 3:
+					tab << inserir_campo<double>(3, -1.000);
+					tab << ",";
+					break;
+				case 4:
+					tab << inserir_campo<char>(4, '0');
+					tab << ",";
+					break;
+				case 5:
+					tab << inserir_campo<string>(5, "");
+					tab << ",";
+			}
+			cont ++;
+		}
 	}
+	tab << endl;	
+
+	tab.close();
 }
 
 Tabela::~Tabela(){

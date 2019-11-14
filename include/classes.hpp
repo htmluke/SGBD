@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "funcoes.hpp"
 using namespace std;
 
 struct Colunas{
@@ -17,7 +18,7 @@ private:
     Colunas* v;
 public:
     Tabela();
-    Tabela(int, int, int, list<string>);
+    Tabela(int);
     ~Tabela();
 };
 
