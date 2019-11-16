@@ -11,14 +11,13 @@ template <typename T>
 T inserir_campo(int tipo, T pKey);
 void menu();
 void opcaoMenu();
-//void inserirLista(string, list<string>);
 void listarTabela(string);
 void excluirTabela();
 bool compareString_Number(char);
 bool verificar_numString(string);
 void inserirLinha(void);
 string verifica_Coluna(string);
+void listarDados();
 
-//void excluirNomeTabela(list<string>);
 
 #endif
