@@ -59,7 +59,7 @@ int main(int argc, const char * argv[]){
                 break;
 
             case LISTARDADOS:{
-
+                listarDados();
             }
                 break;
 
@@ -74,7 +74,7 @@ int main(int argc, const char * argv[]){
                 break;
 
             case EXCLUIRTABELA:{
-                
+                excluirTabela();
             }
                 break;
 
