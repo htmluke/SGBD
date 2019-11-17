@@ -19,6 +19,7 @@ void inserirLinha(void);
 string verifica_Coluna(string);
 void listarDados();
 void pesquisarDado();
+void todosOsDados();
 
 
 #endif
