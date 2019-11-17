@@ -151,26 +151,26 @@ void inserirLinha(){
             switch(tiposC.front()){
                 case 1:
                     tab << inserir_campo(1, -1);
-                    tab << ",";
+                    tab << " , ";
                     break;
                 case 2:
                     tab << inserir_campo<float>(2, -1.0);
-                    tab << ",";
+                    tab << " , ";
                     break;
                 case 3:
                     tab << inserir_campo<double>(3, -1.000);
-                    tab << ",";
+                    tab << " , ";
                     break;
                 case 4:
                     tab << inserir_campo<char>(4, '0');
-                    tab << ",";
+                    tab << " , ";
                     break;
                 case 5:
                     tab << inserir_campo<string>(5, "");
-                    tab << ",";
+                    tab << " , ";
                     break;
                 default:
-                    cout << "Deu merda.\n";
+                    cout << "Houve um problema :(" << endl;
                     break;
             }
             tiposC.pop();
@@ -214,6 +214,7 @@ void inserirLinha(){
      }while(aux == false);
 
 }
+
 void listarDados(){
     ifstream leitura;
     string nome;
@@ -234,6 +235,36 @@ void listarDados(){
     while(!leitura.eof()){
         getline(leitura,linha);
         cout << linha << endl;
+    }
+    leitura.close();
+}
+
+void pesquisarDado(){
+    ifstream leitura;
+
+    string dado, nome, palavra;
+    cout << "Digite o dado que deseja pesquisar" << endl;
+    cin >> dado;
+
+    cout << "Digite o nome do arquivo da seguinte forma 'tabelas/nomearquivo.csv': " << endl;
+    cin >> nome;
+    leitura.open(nome);
+
+    if(leitura.fail() == true)
+    {
+        cout << "Impossível ler o arquivo, tente novamente" << endl;
+        return;
+    }
+    
+    else{
+        while(!leitura.eof()){
+            leitura >> palavra;
+            if(palavra == dado)
+            {
+                cout << "O valor foi encontrado na tabela" << endl;
+                break;
+            }
+        }
     }
     leitura.close();
 }
