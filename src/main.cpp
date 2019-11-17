@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]){
                 break;
 
             case PESQUISARVALOR:{
-
+                pesquisarDado();
             }
                 break;
 
