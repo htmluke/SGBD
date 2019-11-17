@@ -7,6 +7,8 @@
 #include <fstream>
 #include <ctype.h>
 #include <queue>
+#include <vector>
+
 
 using namespace std;
 
@@ -240,31 +242,45 @@ void listarDados(){
 }
 
 void pesquisarDado(){
+
     ifstream leitura;
 
-    string dado, nome, palavra;
-    cout << "Digite o dado que deseja pesquisar" << endl;
-    cin >> dado;
-
-    cout << "Digite o nome do arquivo da seguinte forma 'tabelas/nomearquivo.csv': " << endl;
+    string dado, nome, palavra, s;
+    vector<string> strings;
+    bool aux = false;
+    int i = 0;
+    
+    cout << "Digite o nome do arquivo: " << endl << "\t";
     cin >> nome;
-    leitura.open(nome);
-
+    leitura.open("tabelas/"+nome+".csv");
     if(leitura.fail() == true)
     {
-        cout << "Impossível ler o arquivo, tente novamente" << endl;
+        cout << "Impossível ler o arquivo, tente novamente." << endl;
         return;
     }
+
+    cout << "Digite o dado:" << endl << "\t";
+    cin >> dado;	
+
     
-    else{
-        while(!leitura.eof()){
-            leitura >> palavra;
-            if(palavra == dado)
-            {
-                cout << "O valor foi encontrado na tabela" << endl;
-                break;
-            }
-        }
+    while (getline(leitura, s, ',') && aux == false) {
+    	strings.push_back(s);
+    	cout << s << "\t" << endl;
+    		if(s == dado){
+	          cout << "\t\t\tValor encontrado!" << endl;
+	          aux = true;
+	          i = 1;
+
+	        }else{
+	          i = 0;
+	          }
+	    	}
+        
+    
+ 	leitura.close();
+
+    if(i == 0){
+    	cout << "\nDado não encontrado." << endl;
     }
-    leitura.close();
+
 }
