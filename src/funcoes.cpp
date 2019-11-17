@@ -56,7 +56,8 @@ void menu(){
     cout << "\t4 - Listar Todos os Dados da Tabela" << endl;
     cout << "\t5 - Pesquisar Valor na Tabela" << endl;
     cout << "\t6 - Apagar Valor na Tabela" << endl;
-    cout << "\t7 - Excluir Tabela" << endl;
+    cout << "\t7 - Imprimir todos os dados de uma tabela" << endl;
+    cout << "\t8 - Excluir Tabela" << endl;
    
 }
 
@@ -312,4 +313,26 @@ void pesquisarDado(){
  	leitura.close();
 
 
+}
+
+void todosOsDados(){
+
+    ifstream leitura;
+    string nome, linha;
+    vector<string> strings;
+    cout << "Digite o nome do arquivo que você deseja visualizar: " << endl << "\t";
+    cin >> nome;
+    leitura.open("tabelas/"+nome+".csv");
+    
+    if(leitura.fail() == true)
+    {
+        cout << "Impossível ler o arquivo, tente novamente." << endl;
+        return;
+    }
+
+    while(!leitura.eof()){
+
+        getline(leitura, linha);
+        cout << linha << endl;
+    }
 }
