@@ -16,7 +16,7 @@ using namespace std;
 //feito
 template <typename T>
 T inserir_campo(int tipo, T pKey){
-    T aux;   
+      
     bool control = true;
     while(control){
         try{
@@ -189,7 +189,7 @@ void inserirLinha(){
 
      string tabelaRm, auxiliar;
      int option;
-     bool aux = false, aux1 = false;
+     bool aux = false;
 
      do{
 	     cout<<"Insira o nome da tabela a ser excluída:\t";
@@ -250,7 +250,7 @@ void pesquisarDado(){
     string dado, nome, palavra, s;
     vector<string> strings;
     bool aux = false, control = true;
-    int i = 0, option;
+    int option;
     
     cout << "Digite o nome do arquivo: " << endl << "\t";
     cin >> nome;
