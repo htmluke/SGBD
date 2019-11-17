@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
-#include "classes.hpp"
-#include "funcoes.hpp"
 #include <dirent.h>
 #include <cstdlib>
 #include <fstream>
 #include <ctype.h>
 #include <queue>
 #include <vector>
+#include "classes.hpp"
+#include "funcoes.hpp"
 
 
 
@@ -263,40 +263,40 @@ void pesquisarDado(){
     cout << "Digite o dado:" << endl << "\t";
     cin >> dado;	
     cout << "O que você deseja?\n" << endl;
-    cout << "\t1. Valores maiores que o informado" << endl << "\t2. Valores maiores ou iguais ao informado" << endl << "\t3. Valores iguais ao informado" << endl;
+    cout << /*"\t1. Valores maiores que o informado" << endl << "\t2. Valores maiores ou iguais ao informado" << endl <<*/ "\t3. Valores iguais ao informado" << endl;/*
     cout << "\t4. Valores menores que o informado" << endl << "\t5. Valores menores ou iguais ao informado" << endl;
     cout << "Obs: Se o que estiver sendo procurado for uma palavra, as opções acima serão em relação a ordem alfabética. Se ele for maior, virá depois da sua entrada; se menor, antes." << endl << "\t";
-    cin >> option;	
+    */cin >> option;	
     while (getline(leitura, s, ',') && aux == false) {
     	strings.push_back(s);
     	
     	
     	if(option == 1){
-    			if(s > dado){
+    			/*if(s > dado){
 		 		 cout << s << endl;
 		 		 control = false;;
-				}
+				}*/
 				
     	}else if(option == 2){
-    			if(s >= dado){
+    			/*if(s >= dado){
 		 		 cout << s << endl;
 		 		 control = false;
-				}
+				}*/
     	}else if(option == 3){
     			if(s == dado){
-				cout << s << endl;
+				cout << "Encontrado: " << s << endl;
 				control = false;
 				}
     	}else if(option == 4){
-    			if(s < dado){
+    			/*if(s < dado){
 				  cout << s << endl; //caso
 				  control = false;
-				}
+				}*/
     	}else if(option == 5){
-    			if(s <= dado){
+    			/*if(s <= dado){
 				  cout << s << endl; //caso
 				  control = false;
-				}
+				}*/
     	}else{
     		cout << "Opção inválida, tente novamente." << endl;
     	}
