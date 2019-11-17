@@ -28,7 +28,6 @@ typedef enum Opcoes{
 int main(int argc, const char * argv[]){
     list<string> lista;
     Tabela T;
-    Opcoes op;
     unsigned int n = 3;
     int aux = 1; 
     int opcao;
