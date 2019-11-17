@@ -18,6 +18,7 @@ bool verificar_numString(string);
 void inserirLinha(void);
 string verifica_Coluna(string);
 void listarDados();
+void pesquisarDado();
 
 
 #endif
