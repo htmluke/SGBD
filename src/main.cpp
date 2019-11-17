@@ -20,6 +20,7 @@ typedef enum Opcoes{
 	LISTARDADOS,
 	PESQUISARVALOR,
 	APAGARVALOR,
+    TODOSOSDADOS,
 	EXCLUIRTABELA
 	
 } Opcoes;
@@ -75,6 +76,11 @@ int main(int argc, const char * argv[]){
 
             case EXCLUIRTABELA:{
                 excluirTabela();
+            }
+                break;
+
+            case TODOSOSDADOS:{
+                todosOsDados();
             }
                 break;
 
