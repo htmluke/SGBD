@@ -11,7 +11,7 @@ make
 
 ```
 ## Sobre o projeto
-Nesse projeto, programdo em **c++**, foi feito a simulação das operações de um bando de dados relacional, permitindo que o usuário crie tabelas, nomeie-as, adicionar/excluir elementos nas tabelas, além de poder pesquisar dados e, também, excluir o arquivo em .csv gerado.
+Nesse projeto, programdo em **c++**, foi feito a simulação das operações de um bando de dados relacional, permitindo que o usuário crie tabelas, nomeie-as, adicione/exclua elementos nas tabelas, além de poder pesquisar dados e, também, excluir o arquivo em .csv gerado.
 
 ## Funcionalidades
 BREVE DESCRIÇÃO DAS FUNCIONALIDADES
