@@ -27,8 +27,6 @@ typedef enum Opcoes{
 
 int main(int argc, const char * argv[]){
     list<string> lista;
-    Tabela T;
-    unsigned int n = 3;
     int aux = 1; 
     int opcao;
     while(aux == 1){
@@ -44,7 +42,7 @@ int main(int argc, const char * argv[]){
                 break;
 
             case CRIARTABELA:{
-                Tabela Tab(n);
+                Tabela tab;
             }
                 break;
 
@@ -59,7 +57,7 @@ int main(int argc, const char * argv[]){
                 break;
 
             case LISTARDADOS:{
-                listarDados();
+                todosOsDados();
             }
                 break;
 

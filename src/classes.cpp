@@ -6,6 +6,7 @@
 #include <ctype.h>
 using namespace std;
 
+//função responsável por garantir que a informação dada pelo usuário pode ser inseriada na tabela;
 template <typename T>
 T inserir_campo(int tipo, T pKey){
 	bool control = true;
@@ -27,6 +28,7 @@ T inserir_campo(int tipo, T pKey){
             cout <<"\t3_____ double\n";
             cout <<"\t4_____ char\n";
             cout <<"\t5_____ string\n";
+            //limpando o cin
             cin.clear();
             string badToken;
         	cin >> badToken;
@@ -38,13 +40,15 @@ T inserir_campo(int tipo, T pKey){
     return pKey;
 }
 
-Tabela::Tabela(){}
+Tabela::Tabela(){
 
-Tabela::Tabela(int tam){
 	cout <<"Qual será o nome da tabela ?\n";
 	cout << "\t";
 	string nome;
 	cin >> nome;
+	unsigned int tam;
+	cout <<"Quantas colunas a tabela terá ?\n";
+	tam = inserir_campo<int>(1,-1);
 
 	//Acessa a função da lista que armazena o nome da tabela
 	//inserirLista(nome, lista);
@@ -108,15 +112,9 @@ Tabela::Tabela(int tam){
 	    		cin >> t;
 	    	}
 	    	this->v[i].tipo = t;
-	    	if(i+1 == tam){	    		
-	    		tab << this->v[i].nome;
-	    		tab << this->v[i].tipo;
-	    	}
-	    	else {
-	    		tab << this->v[i].nome;
-	    		tab << this->v[i].tipo;
-    			tab << ",";
-	    	}
+	    	tab << this->v[i].nome;
+	    	tab << this->v[i].tipo;
+    		tab << ",";
 	    }	    
     }
     tab << endl;

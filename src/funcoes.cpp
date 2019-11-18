@@ -47,6 +47,11 @@ T inserir_campo(int tipo, T pKey){
     return pKey;
 }
 
+//função para garantir que o campo
+int inserir_pKey(){
+
+}
+
 void menu(){
     cout << "\n\tEscolha uma opção: " << endl;
     cout << "\t0 - Sair" << endl;
@@ -134,7 +139,7 @@ void inserirLinha(){
 
     string linha;
     getline(aux, linha);
-    cout << linha << endl;
+    //cout << linha << endl;
     aux.close();
     queue <int> tiposC;
     for(int i = 0; i < linha.size(); i++){
@@ -148,38 +153,64 @@ void inserirLinha(){
 
     tab.open("tabelas/"+tabela+".csv", std::ofstream::app);
     int cont = 1;
+    int finalFila = tiposC.size();
+    
+    /*string pkey;
+    int chavesPrimarias[tiposC.size()];
+    int indicePkey = 0;
+    while(!aux.eof()){
+        getline(aux, linha);
+        for(int i = 0; i < linha.size(); i++){
+            if(linha[i] != ','){
+                pkey += linha[i];
+            }
+            else {
+
+            }
+        }
+    }*/
 
     while(!tiposC.empty()){
         cout << "Digite o conteudo da coluna " << cont <<": \n";
-            cout << tiposC.front() << endl;
+            cout << "É esperado informação do tipo: " << tiposC.front() << endl;
             switch(tiposC.front()){
                 case 1:
+                    if(cont == 1){
+
+                    }
                     tab << inserir_campo(1, -1);
-                    tab << " , ";
+                    tab << " , "; 
                     break;
                 case 2:
                     tab << inserir_campo<float>(2, -1.0);
-                    tab << " , ";
+                    tab << " , "; 
                     break;
                 case 3:
                     tab << inserir_campo<double>(3, -1.000);
-                    tab << " , ";
+                    tab << " , "; 
                     break;
                 case 4:
                     tab << inserir_campo<char>(4, '0');
-                    tab << " , ";
+                    tab << " , "; 
                     break;
                 case 5:
                     tab << inserir_campo<string>(5, "");
-                    tab << " , ";
+                    tab << " , ";                     
                     break;
                 default:
                     cout << "Houve um problema :(" << endl;
                     break;
             }
+            //if para garantir que a virgula não será inserida no último campo da linha.
+            if(cont < finalFila){
+                tab << " , "; 
+            }
             tiposC.pop();
             cont ++;
+            
+            
     }
+    tab << endl;
     tab.close();
     
 

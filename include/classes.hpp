@@ -18,7 +18,6 @@ private:
     Colunas* v;
 public:
     Tabela();
-    Tabela(int);
     ~Tabela();
 };
 
