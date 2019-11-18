@@ -200,10 +200,7 @@ void inserirLinha(){
                     cout << "Houve um problema :(" << endl;
                     break;
             }
-            //if para garantir que a virgula não será inserida no último campo da linha .
-            if(cont < finalFila){
-                tab << " , "; 
-            }
+            
             tiposC.pop();
             cont ++;
             
