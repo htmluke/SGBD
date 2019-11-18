@@ -116,7 +116,7 @@ Tabela::Tabela(){
 	    	tab << this->v[i].tipo;
     		tab << ",";
 	    }	    
-    }
+    } //.
     tab << endl;
     //
     
