@@ -253,7 +253,8 @@ void pesquisarDado(){
     string dado, nome, palavra, s;
     vector<string> strings;
     bool aux = false, control = true;
-    int option;
+    int option, k = 0;
+    double numeros[100];
     
     cout << "Digite o nome do arquivo: " << endl << "\t";
     cin >> nome;
@@ -265,55 +266,96 @@ void pesquisarDado(){
     }
 
     cout << "Digite o dado:" << endl << "\t";
-    cin >> dado;	
+    cin >> dado;    
     cout << "O que você deseja?\n" << endl;
-    cout << /*"\t1. Valores maiores que o informado" << endl << "\t2. Valores maiores ou iguais ao informado" << endl <<*/ "\t3. Valores iguais ao informado" << endl;/*
+    cout << "\t1. Valores maiores que o informado" << endl << "\t2. Valores maiores ou iguais ao informado" << endl << "\t3. Valores iguais ao informado" << endl;
     cout << "\t4. Valores menores que o informado" << endl << "\t5. Valores menores ou iguais ao informado" << endl;
     cout << "Obs: Se o que estiver sendo procurado for uma palavra, as opções acima serão em relação a ordem alfabética. Se ele for maior, virá depois da sua entrada; se menor, antes." << endl << "\t";
-    */cin >> option;	
+    cin >> option;
+    getline(leitura, s);
     while (getline(leitura, s, ',') && aux == false) {
-    	strings.push_back(s);
-    	
-    	
-    	if(option == 1){
-    			/*if(s > dado){
-		 		 cout << s << endl;
-		 		 control = false;;
-				}*/
-				
-    	}else if(option == 2){
-    			/*if(s >= dado){
-		 		 cout << s << endl;
-		 		 control = false;
-				}*/
-    	}else if(option == 3){
-    			if(s == dado){
-				cout << "Encontrado: " << s << endl;
-				control = false;
-				}
-    	}else if(option == 4){
-    			/*if(s < dado){
-				  cout << s << endl; //caso
-				  control = false;
-				}*/
-    	}else if(option == 5){
-    			/*if(s <= dado){
-				  cout << s << endl; //caso
-				  control = false;
-				}*/
-    	}else{
-    		cout << "Opção inválida, tente novamente." << endl;
-    	}
-	    	
-	}
+        strings.push_back(s);
+        
+        if(verficar_numString(dado)){ //se o dado recebido for um número:
+          
+            if(verficar_numString(s)){ //se a string atual for um numero, joga num vetor de floats.
+                numeros[k] = stod(s);
+                if(option == 1){
+                        if(numeros[k] > stod(dado)){
+                         cout << "Encontrado: " << s << endl;
+                         control = false;;
+                        }
+                        
+                }else if(option == 2){
+                        if(numeros[k] >= stod(dado)){
+                         cout << "Encontrado: " << s << endl;
+                         control = false;
+                        }
+                }else if(option == 3){
+                        if(numeros[k] == stod(dado)){
+                        cout << "Encontrado: " << s << endl;
+                        control = false;
+                        }
+                }else if(option == 4){
+                        if(numeros[k] < stod(dado)){
+                          cout << "Encontrado: " << s << endl; //caso
+                          control = false;
+                        }
+                }else if(option == 5){
+                        if(numeros[k] <= stod(dado)){
+                          cout << "Encontrado: " << s << endl; //caso
+                          control = false;
+                        }
+                }else{
+                    cout << "Opção inválida, tente novamente." << endl;
+                }
+            }
+        }else{
+                 if(option == 1){
+                        if(s > dado){
+                         cout << "Encontrado: " << s << endl;
+                         control = false;
+                        }
+                        
+                }else if(option == 2){
+                        if(s >= dado){
+                         cout << "Encontrado: " << s << endl;
+                         control = false;
+                        }
+                }else if(option == 3){
+                        if(s == dado){
+                        cout << "Encontrado: " << s << endl;
+                        control = false;
+                        }
+                }else if(option == 4){
+                        if(s < dado){
+                          cout << "Encontrado: " << s << endl; //caso
+                          control = false;
+                        }
+                }else if(option == 5){
+                        if(s <= dado){
+                          cout << "Encontrado: " << s << endl; //caso
+                          control = false;
+                        }
+                }else{
+                    cout << "Opção inválida, tente novamente." << endl;
+                }       
+        }
 
-	if(control){
-    	cout << "Dado não encontrado." << endl;
+
+        k++;
+        
+        
+            
     }
-    		
+
+    if(control){
+    cout << "Dado não encontrado." << endl;
+    }
+            
         
     
- 	leitura.close();
+    leitura.close();
 
 
 }
