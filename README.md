@@ -25,7 +25,7 @@ Struct coluna, armazenando o nome da coluna e, também, o seu tipo (int, float, 
 * **Menu**
 Função que realiza a impressão, a partir de cout, de um menu, dado as opções que o usuário pode realizar no main.cpp, sendo impresso sempre que o usuário quiser realizar algo que não seja a opção de sair do programa.
 * **Listar Tabela**
-Função que realiza a listagem das tabelas já criadas pelo usuário, a partir da biblioteca **<dirent.h>** o programa pode adentrar o diretório criado para armazenar os arquivos .csv e, depois disso, iterar entre eles para poder os listar, realizando a impressão de todos os arquivos ou de nenhum, caso não haja documentos.
+Função que realiza a listagem das tabelas já criadas pelo usuário, a partir da biblioteca **<dirent.h>**, o programa pode adentrar o diretório criado para armazenar os arquivos .csv e, depois disso, iterar entre eles para poder os listar, realizando a impressão de todos os arquivos ou de nenhum, caso não haja documentos.
 * **Inserir Linha**
 Com o intuito de aumentar o tamanho da tabela para inserir mais informações, a função de inserir tabela realiza justamente a funçaõ de inserir mais um espaço em baixo da tabela(arquivo .csv), fazendo com que o usuário tenha mais campos de inserção de dados.
 * **Pesquisar Dado**
