@@ -46,7 +46,7 @@ int main(int argc, const char * argv[]){
                 break;
 
            case LISTARTABELA:{
-                listarTabela("tabelas");            
+                listarTabelas("tabelas");            
             }
                 break;
 
