@@ -59,7 +59,7 @@ int main(int argc, const char * argv[]){
             case LISTARDADOS:{
                 todosOsDados();
             }
-                break;
+                break; //a
 
             case PESQUISARVALOR:{
                 pesquisarDado();
