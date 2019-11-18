@@ -250,30 +250,6 @@ void inserirLinha(){
 
 }
 
-void listarDados(){
-    ifstream leitura;
-    string nome;
-
-    cout << "Digite o nome do arquivo da seguinte forma 'tabelas/nomearquivo.csv': " << endl;
-    cin >> nome;
-
-    leitura.open(nome);
-
-    if(leitura.fail() == true)
-    {
-        cout << "Impossível ler o arquivo, tente novamente" << endl;
-        return;
-    }
-
-    string linha;
-
-    while(!leitura.eof()){
-        getline(leitura,linha);
-        cout << linha << endl;
-    }
-    leitura.close();
-}
-
 void pesquisarDado(){
 
     ifstream leitura;
