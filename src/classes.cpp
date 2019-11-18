@@ -47,8 +47,15 @@ Tabela::Tabela(){
 	string nome;
 	cin >> nome;
 	unsigned int tam;
-	cout <<"Quantas colunas a tabela terá ?\n";
-	tam = inserir_campo<int>(1,-1);
+	do{
+		cout <<"Lembre-se que toda tabela deve ter uma chave primária, então também conte-a no número de colunas.\n";
+		cout <<"Quantas colunas a tabela terá ?\n";
+		tam = inserir_campo<int>(1,-1);
+		if(tam == 0){
+			cout << "A tabela deve conter pelo menos uma coluna!\n";
+		}
+	}while(tam == 0);
+	
 
 	//Acessa a função da lista que armazena o nome da tabela
 	//inserirLista(nome, lista);
@@ -76,6 +83,7 @@ Tabela::Tabela(){
     		if(i+1 == tam){
     			tab << this->v[0].nome;
     			tab << this->v[0].tipo;
+    			tab << ",";
     		}
     		else {
     			tab << this->v[0].nome;
