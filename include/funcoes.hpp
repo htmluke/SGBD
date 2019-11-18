@@ -10,7 +10,6 @@ using namespace std;
 template <typename T>
 T inserir_campo(int tipo, T pKey);
 void menu();
-void opcaoMenu();
 void listarTabela(string);
 void excluirTabela();
 bool compareString_Number(char);
