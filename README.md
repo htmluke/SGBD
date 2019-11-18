@@ -2,7 +2,7 @@
 **Sistema de gerenciamento de banco de dados**
 
 ## Para compilar e executar: 
-Clone o repositório e, **dando cd na pasta**, utilize o comando 'make' para gerar o arquivo executável. Depois disso, digite ./exe  no terminal de comandos para executar o programa.
+Clone o repositório e, **dando cd no diretório criado**, utilize o comando 'make' para gerar o arquivo executável. Depois disso, digite ./exe  no terminal de comandos para executar o programa.
  
 ```
 git clone https://github.com/htmluke/SGBD
