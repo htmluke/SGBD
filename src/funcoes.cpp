@@ -66,7 +66,7 @@ void menu(){
 }
 
 //feito
-void listarTabela(string nomeDir){
+void listarTabelas(string nomeDir){
     DIR *dir = 0;
     struct dirent *entrada = 0;
     unsigned char isDir = 0x4;
@@ -139,7 +139,7 @@ void inserirLinha(){
     string linha;
     getline(aux, linha);
     //cout << linha << endl;
-    aux.close();
+    
     queue <int> tiposC;
     for(int i = 0; i < linha.size(); i++){
         if(isdigit(linha[i])){
@@ -148,13 +148,7 @@ void inserirLinha(){
         }
     }
 
-    ofstream tab;
-
-    tab.open("tabelas/"+tabela+".csv", std::ofstream::app);
-    int cont = 1;
-    int finalFila = tiposC.size();
-    
-    /*string pkey;
+    string pkey;
     int chavesPrimarias[tiposC.size()];
     int indicePkey = 0;
     while(!aux.eof()){
@@ -164,10 +158,20 @@ void inserirLinha(){
                 pkey += linha[i];
             }
             else {
-
+            	chavesPrimarias[indicePkey] = stoi(linha);
+            	indicePkey ++;
+            	linha = "";
             }
         }
-    }*/
+    }
+
+    aux.close();
+
+    ofstream tab;
+
+    tab.open("tabelas/"+tabela+".csv", std::ofstream::app);
+    int cont = 1;
+    int finalFila = tiposC.size();
 
     while(!tiposC.empty()){
         cout << "Digite o conteudo da coluna " << cont <<": \n";
@@ -175,26 +179,44 @@ void inserirLinha(){
             switch(tiposC.front()){
                 case 1:
                     if(cont == 1){
-
+                    	int pkeyTemp;
+                    	bool control = true;
+                    	while(control){
+                    		//variavel para armazenar temporariamente o dado que o usuário dá para ser a chave primária.
+                    		pkeyTemp = inserir_campo(1, -1);
+                    		control = false;
+                    		for(int i = 0; i < indicePkey+1; i++){
+	                    		if(pkeyTemp == chavesPrimarias[i]){
+	                    			cout << "Essa chave primária já existe na tabela.\n Digite uma chave primária diferente.\n";
+	                    			control = true;
+	                    			break;
+	                    		}
+                    		}
+                    	}
+                    	tab << pkeyTemp;
+                    	tab << ",";                     	
                     }
-                    tab << inserir_campo(1, -1);
-                    tab << " , "; 
+                    else {
+                    	tab << inserir_campo(1, -1);
+                    	tab << ","; 
+                    }
+                    
                     break;
                 case 2:
                     tab << inserir_campo<float>(2, -1.0);
-                    tab << " , "; 
+                    tab << ","; 
                     break;
                 case 3:
                     tab << inserir_campo<double>(3, -1.000);
-                    tab << " , "; 
+                    tab << ","; 
                     break;
                 case 4:
                     tab << inserir_campo<char>(4, '0');
-                    tab << " , "; 
+                    tab << ","; 
                     break;
                 case 5:
                     tab << inserir_campo<string>(5, "");
-                    tab << " , ";                     
+                    tab << ",";                     
                     break;
                 default:
                     cout << "Houve um problema :(" << endl;
