@@ -75,11 +75,6 @@ int main(int argc, const char * argv[]){
             }
                 break;
 
-            case TODOSOSDADOS:{
-                todosOsDados();
-            }
-                break;
-
             default:
                 cout << "Opção inválida, digite novamente :)" << endl;
 
