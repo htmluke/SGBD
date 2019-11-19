@@ -44,27 +44,27 @@ Devido ao tempo, que poderia ter sido administrado de outra forma mais adequada,
 ## Autores
 
 * **Lucas Emanoell** - [htmluke](https://github.com/htmluke)
->Estrutura inicial
->Estruturação do código
->Modularização
->Classes e Structs
->Listar Tabela
->Pesquisar Dado
+>Estrutura inicial - 
+>Estruturação do código - 
+>Modularização - 
+>Classes e Structs - 
+>Listar Tabela - 
+>Pesquisar Dado - 
 >Todos os Dadados (das tabelas)
 
 * **Lucas Oliveira** - [lucasx7](https://github.com/lucasx7)
->Uso de templates
->Inserir campo/pkey
->Funçãp isCleanString
->Verifica Coluna/numString
->Inserir Linha
->listar Tabela
+>Uso de templates - 
+>Inserir campo/pkey - 
+>Funçãp isCleanString - 
+>Verifica Coluna/numString - 
+>Inserir Linha - 
+>listar Tabela 
 
 * **Nathalia Bezerra** - [nathalia-b](https://github.com/nathalia-b)
->Uso de templates
->Inserir campo/pkey
->Funçãp isCleanString
->Verifica Coluna/numString
->Excluir Tabela
->Pesquisar Dado
+>Uso de templates - 
+>Inserir campo/pkey - 
+>Funçãp isCleanString - 
+>Verifica Coluna/numString - 
+>Excluir Tabela - 
+>Pesquisar Dado - 
 >Todos os Dadados (das tabelas)
