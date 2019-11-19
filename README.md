@@ -50,7 +50,7 @@ Devido ao tempo, que poderia ter sido administrado de outra forma mais adequada,
 >Classes e Structs - 
 >Listar Tabela - 
 >Pesquisar Dado - 
->Todos os Dadados (das tabelas)
+>Todos os Dados (das tabelas)
 
 * **Lucas Oliveira** - [lucasx7](https://github.com/lucasx7)
 >Uso de templates - 
@@ -67,4 +67,4 @@ Devido ao tempo, que poderia ter sido administrado de outra forma mais adequada,
 >Verifica Coluna/numString - 
 >Excluir Tabela - 
 >Pesquisar Dado - 
->Todos os Dadados (das tabelas)
+>Todos os Dados (das tabelas)
