@@ -274,7 +274,7 @@ void pesquisarDado(){
 
     string dado, nome, palavra, s;
     vector<string> strings;
-    bool aux = false, control = true;
+    bool control = true;
     int option, k = 0;
     double numeros[100];
     
@@ -295,7 +295,7 @@ void pesquisarDado(){
     cout << "Obs: Se o que estiver sendo procurado for uma palavra, as opções acima serão em relação a ordem alfabética. Se ele for maior, virá depois da sua entrada; se menor, antes." << endl << "\t";
     cin >> option;
     getline(leitura, s);
-    while (getline(leitura, s, ',') && aux == false) {
+    while (getline(leitura, s, ',')) {
         strings.push_back(s);
         
         if(verficar_numString(dado)){ //se o dado recebido for um número:
